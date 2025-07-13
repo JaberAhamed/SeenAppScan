@@ -42,7 +42,6 @@ private fun FeatureThatRequiresCameraPermission() {
         if (cameraPermissionState.status.isGranted) {
             CameraSection(
                 modifier = Modifier,
-                //  cameraProvider = cameraProviderFuture,
                 onBarcodeDetect = {
                     barcodeValue = it
                 }

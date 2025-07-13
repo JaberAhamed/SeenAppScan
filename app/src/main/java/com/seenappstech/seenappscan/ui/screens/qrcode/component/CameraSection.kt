@@ -39,7 +39,6 @@ import androidx.compose.ui.viewinterop.AndroidView
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.compose.LocalLifecycleOwner
 import com.seenappstech.seenappscan.ui.screens.utils.BarcodeAnalyzer
-import kotlinx.coroutines.delay
 
 @Composable
 fun CameraSection(
@@ -69,13 +68,10 @@ fun CameraSection(
         val preview = Preview.Builder().build().also {
             it.surfaceProvider = previewView.surfaceProvider
         }
-        delay(50)
 
         val selector = CameraSelector.Builder()
             .requireLensFacing(CameraSelector.LENS_FACING_BACK)
             .build()
-
-        delay(50)
 
         val imageAnalysis = ImageAnalysis.Builder().build()
         imageAnalysis.setAnalyzer(
@@ -91,7 +87,6 @@ fun CameraSection(
         )
 
         try {
-            delay(50)
             camera = cameraProvider.bindToLifecycle(
                 lifecycleOwner,
                 selector,

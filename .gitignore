@@ -4,6 +4,7 @@
 .DS_Store
 /captures
 .kotlin
+path.jks
 
 # Source: https://github.com/github/gitignore/blob/master/Android.gitignore
 

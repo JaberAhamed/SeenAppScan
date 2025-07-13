@@ -148,6 +148,7 @@ fun MainScreen(
         val graph =
             navController.createGraph(startDestination = Screen.QRScan.rout) {
                 composable(route = Screen.QRScan.rout) {
+                    onQrCodeScan()
                     QRCodeScreen()
                 }
                 composable(route = Screen.NFCScan.rout) {
@@ -236,7 +237,7 @@ val navigationItems =
 
 @Preview(showBackground = true)
 @Composable
-fun GreetingPreview() {
+fun MainScreenPreview() {
     SeenappscanTheme {
         MainScreen(
             scanningActive = false,
